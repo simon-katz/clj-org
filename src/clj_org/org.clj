@@ -236,10 +236,13 @@
                  )?")
        (remove (partial every? empty?))
        (mapcat (fn [[_ before code]]
-                 (cond
-                   (not before) [[:code code]]
-                   (not code) [before]
-                   :else [before [:code code]])))))
+                 (let [style {:style (str "background-color: #E0E0E0;"
+                                          "padding-left:     6px;"
+                                          "padding-right:    6px;")}]
+                   (cond
+                     (not before) [[:code style code]]
+                     (not code) [before]
+                     :else [before [:code style code]]))))))
 
 
 (defn strike-ify [s]
