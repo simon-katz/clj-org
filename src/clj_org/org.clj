@@ -101,10 +101,7 @@
 
 (defn find-paragraphs [s]
   (->> s
-       (re-seq #"(?x)
-                 ((?:.+\n?)+)
-                 |
-                 (?:\n{2,})")
+       (re-seq #"((?:.+)+)")
        (map (comp (partial vec* :p) rest))))
 
 

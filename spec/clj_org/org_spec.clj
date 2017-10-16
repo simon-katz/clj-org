@@ -45,10 +45,13 @@
 
 
 (describe-examples identity find-paragraphs
-  "x"          [[:p "x"]]
-  "x\n"        [[:p "x\n"]]
-  "p1\n\np2"   [[:p "p1\n"] [:p "p2"]]
-  "p1\n\np2\n" [[:p "p1\n"] [:p "p2\n"]])
+  "x"                  [[:p "x"]]
+  "x\n"                [[:p "x"]]
+  "p1\np2"             [[:p "p1"] [:p "p2"]]
+  "p1\np2\n"           [[:p "p1"] [:p "p2"]]
+  "p1\n\np2"           [[:p "p1"] [:p "p2"]]
+  "p1\n\np2\n"         [[:p "p1"] [:p "p2"]]
+  "p1\n\n\n\n\n\np2\n" [[:p "p1"] [:p "p2"]])
 
 
 (describe-examples identity linkify
