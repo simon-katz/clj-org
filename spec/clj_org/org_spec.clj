@@ -4,7 +4,9 @@
             [speclj.core :refer :all]))
 
 
-(defmacro describe-examples [right-fn left-fn & body]
+(defmacro describe-examples
+  {:style/indent 2}
+  [right-fn left-fn & body]
   `(describe "Examples"
      ~@(for [[l r] (partition 2 body)]
          `(~'it ~l
@@ -149,8 +151,8 @@
 
 (describe-examples identity srcify
   "asdf"                            ["asdf"]
-  "#+BEGIN_SRC x\n123\n#+END_SRC\n" [[:pre {:class "lang_x"}
-                                      "123\n"]])
+  "#+BEGIN_SRC x\n123\n#+END_SRC\n" [[:pre [:code {:class "x"}
+                                            "123\n"]]])
 
 
 (describe-examples identity example-ify

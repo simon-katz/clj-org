@@ -320,10 +320,12 @@
                  )?")
        (remove (partial every? empty?))
        (mapcat (fn [[_ before lang block]]
-                 (cond
-                   (not before) [[:pre {:class (str "lang_" lang)} block]]
-                   (not block) [before]
-                   :else [before [:pre {:class (str "lang_" lang)} block]])))))
+                 (let [code-stuff [:pre [:code {:class lang}
+                                         block]]]
+                   (cond
+                     (not before) [code-stuff]
+                     (not block) [before]
+                     :else [before code-stuff]))))))
 
 
 (defn example-ify [txt]
