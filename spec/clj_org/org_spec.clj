@@ -115,18 +115,10 @@
 (describe-examples identity code-ify
   "aaabbb"         ["aaabbb"]
   "l1\nl2"         ["l1\nl2"]
-  "=code="         [[:code
-                     {:style "background-color: #E0E0E0;padding-left:     6px;padding-right:    6px;"}
-                     "code"]]
-  "a =code="       ["a " [:code
-                          {:style "background-color: #E0E0E0;padding-left:     6px;padding-right:    6px;"}
-                          "code"]]
-  "=code= red"     [[:code
-                     {:style "background-color: #E0E0E0;padding-left:     6px;padding-right:    6px;"}
-                     "code"] " red"]
-  "l1\nl2 =x=\n z" ["l1\nl2 " [:code
-                               {:style "background-color: #E0E0E0;padding-left:     6px;padding-right:    6px;"}
-                               "x"] "\n z"])
+  "=code="         [[:code "code"]]
+  "a =code="       ["a " [:code "code"]]
+  "=code= red"     [[:code "code"] " red"]
+  "l1\nl2 =x=\n z" ["l1\nl2 " [:code "x"] "\n z"])
 
 
 (describe-examples identity strike-ify
