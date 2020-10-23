@@ -8,5 +8,5 @@
   :source-paths ["src" "spec"]
   :profiles {:dev {:dependencies [[speclj "3.3.1"]]
                    :plugins [[speclj "3.3.1"]]}}
-  :dependencies [[org.clojure/clojure "1.7.0"]
+  :dependencies [[org.clojure/clojure "1.10.1"]
                  [hiccup "1.0.5"]])
